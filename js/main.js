@@ -4,7 +4,7 @@ var config = {
     width : 1000, 
     height : 1000, 
      scale :{
-            mode:Phaser.Scale.ENVELOP,
+            mode:Phaser.Scale.NO_SCALE,
             autoCenter: Phaser.Scale.CENTER_BOTH
         },
     scene: {
@@ -144,7 +144,7 @@ function create(){
     backgroundImage.setPosition(config.width/2, config.height/2)
 
     //caméra  plus colision sur le bord de la map
-    this.cameras.main.setBounds(0, 0, 1200, 1200 );
+    this.cameras.main.setBounds(0, 0, 1000, 1000 );
     this.cameras.main.setZoom(2);
     this.physics.world.setBounds(0, 0, 1000, 1000);
 
