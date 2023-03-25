@@ -310,7 +310,32 @@ function create(){
         frameRate : 6,
         repeat : -1
     })
-
+      //animaux 
+      cow1 = this.physics.add.sprite(120, 290, "cow")
+      cow1.anims.play("cow")
+      cow1.setScale(3)
+      pig1 = this.physics.add.sprite(190, 350, "pig")
+      pig1.anims.play("pig")
+      pig1.setScale(3)
+      chicken1 = this.physics.add.sprite(270, 250, "chicken")
+      chicken1.anims.play("chicken")
+      chicken1.setScale(3)
+  
+      //fire
+      fire1 = this.physics.add.sprite(300, 150, "fire")
+      fire1.anims.play("fire")
+      fire1.setScale(0.1)
+      
+        //appartion du joueur
+        joueur = this.physics.add.sprite( 500 , 550, "joueur")
+        //Lancer la caméra sur le joueur
+        this.cameras.main.startFollow(joueur);
+        //taille joueur
+        joueur.setScale(2.5);
+        //activer les collision du joueur sur les bords
+        joueur.setCollideWorldBounds(true);
+        //lancer l'anim de base
+        joueur.anims.play("playerWait")
     //foret sur la carte
     tree = this.physics.add.sprite( 300 , 600, "tree")
     tree.anims.play("tree")
@@ -327,32 +352,9 @@ function create(){
     tree6 = this.physics.add.sprite( 800 , 600, "tree")
     tree6.anims.play("tree")
 
-    //animaux 
-    cow1 = this.physics.add.sprite(120, 290, "cow")
-    cow1.anims.play("cow")
-    cow1.setScale(3)
-    pig1 = this.physics.add.sprite(190, 350, "pig")
-    pig1.anims.play("pig")
-    pig1.setScale(3)
-    chicken1 = this.physics.add.sprite(270, 250, "chicken")
-    chicken1.anims.play("chicken")
-    chicken1.setScale(3)
+  
 
-    //fire
-    fire1 = this.physics.add.sprite(300, 150, "fire")
-    fire1.anims.play("fire")
-    fire1.setScale(0.1)
 
-    //appartion du joueur
-    joueur = this.physics.add.sprite( 500 , 550, "joueur")
-    //Lancer la caméra sur le joueur
-    this.cameras.main.startFollow(joueur);
-    //taille joueur
-    joueur.setScale(2.5);
-    //activer les collision du joueur sur les bords
-    joueur.setCollideWorldBounds(true);
-    //lancer l'anim de base
-    joueur.anims.play("playerWait")
 }
 
 function update(time, delta){
