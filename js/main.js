@@ -3,6 +3,10 @@ var config = {
     type : Phaser.AUTO,
     width : 1000, 
     height : 1000, 
+     scale :{
+            mode:Phaser.Scale.ENVELOP,
+            autoCenter: Phaser.Scale.CENTER_BOTH
+        },
     scene: {
         preload: preload,
         create: create,
@@ -15,6 +19,7 @@ var config = {
                 gravity: { y: 0 },
             }
         }
+       
 }
 
 const game = new Phaser.Game(config);
