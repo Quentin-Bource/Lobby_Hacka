@@ -164,20 +164,20 @@ function create(){
     tentebleue.setScale(-1,1)
     pilotibleue = this.add.sprite(860, 90, "pilotibleue")
     pilotibleue.setScale(-1,1)
-    chiotte2 = this.add.sprite(300, 60, "chiotte")
+    chiotte2 = this.add.sprite(650, 60, "chiotte")
     chiotte2.setScale(0.75)
-    rondin1 = this.add.sprite(300, 170, "rondin")
-    tableafeu1 = this.add.sprite(300, 180, "tableafeu")
-    chiotteR = this.add.sprite(300, 55, "chiotteR")
-    chiotteR.setScale(0.75)
-    gourde1 = this.add.sprite(425, 180, "gourde")
-    gourde1.setScale(0.75)
-    gourdeGold1 = this.add.sprite(425, 180, "gourdeGold")
+    rondin1 = this.add.sprite(700, 170, "rondin")
+    tableafeu1 = this.add.sprite(700, 180, "tableafeu")
+    chiotteB = this.add.sprite(650, 55, "chiotteB")
+    chiotteB.setScale(0.75)
+    gourde2 = this.add.sprite(575, 180, "gourde")
+    gourde2.setScale(0.75)
+    gourdeGold1 = this.add.sprite(575, 180, "gourdeGold")
     gourdeGold1.setScale(0.75)
-    bassin1 = this.add.sprite(150, 200, "bassin")
-    bassin1.setScale(0.75)
-    bassinGold1 = this.add.sprite(150, 200, "bassinGold")
-    bassinGold1.setScale(0.75)
+    bassin2 = this.add.sprite(800, 200, "bassin")
+    bassin2.setScale(0.75)
+    bassinGold2 = this.add.sprite(800, 200, "bassinGold")
+    bassinGold2.setScale(0.75)
 
 
      //création feu
@@ -320,12 +320,28 @@ function create(){
       chicken1 = this.physics.add.sprite(270, 250, "chicken")
       chicken1.anims.play("chicken")
       chicken1.setScale(3)
+
+      cow2 = this.physics.add.sprite(870, 290, "cow")
+      cow2.anims.play("cow")
+      cow2.setScale(-3,3)
+      pig2 = this.physics.add.sprite(800, 350, "pig")
+      pig2.anims.play("pig")
+      pig2.setScale(-3,3)
+      chicken2 = this.physics.add.sprite(750, 270, "chicken")
+      chicken2.anims.play("chicken")
+      chicken2.setScale(-3,3)
+  
   
       //fire
       fire1 = this.physics.add.sprite(300, 150, "fire")
       fire1.anims.play("fire")
       fire1.setScale(0.1)
-      
+
+      fire2 = this.physics.add.sprite(700, 150, "fire")
+      fire2.anims.play("fire")
+      fire2.setScale(0.1)
+
+
         //appartion du joueur
         joueur = this.physics.add.sprite( 500 , 550, "joueur")
         //Lancer la caméra sur le joueur
@@ -336,6 +352,8 @@ function create(){
         joueur.setCollideWorldBounds(true);
         //lancer l'anim de base
         joueur.anims.play("playerWait")
+
+
     //foret sur la carte
     tree = this.physics.add.sprite( 300 , 600, "tree")
     tree.anims.play("tree")
