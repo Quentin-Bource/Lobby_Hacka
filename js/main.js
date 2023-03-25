@@ -19,6 +19,7 @@ var cursor;
 var joueur;
 
 function preload(){
+    
     //Animation joueur sur place
     this.load.image("joueur1", "assets/perso/player1.png")
     this.load.image("joueur2", "assets/perso/player2.png")
