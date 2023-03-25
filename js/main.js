@@ -804,3 +804,4 @@ function update(time, delta){
     this.physics.world.collide(joueur,chicken4)
 
 }
+
