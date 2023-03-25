@@ -11,8 +11,8 @@ var config = {
         physics: {
             default: 'arcade',
             arcade: {
+                debug:true,
                 gravity: { y: 0 },
-                debug: false
             }
         }
 }
@@ -129,6 +129,8 @@ function preload(){
 
 function create(){
 
+    var block = this.physics.add.image(400, 100, 'block');
+
     //créer input avec les keyboard
     cursor = this.input.keyboard.createCursorKeys();
 
@@ -137,27 +139,54 @@ function create(){
     backgroundImage.setPosition(config.width/2, config.height/2)
 
     //caméra  plus colision sur le bord de la map
-    this.cameras.main.setBounds(0, 0, 1200, 1200);
+    this.cameras.main.setBounds(0, 0, 1200, 1200 );
     this.cameras.main.setZoom(2);
     this.physics.world.setBounds(0, 0, 1000, 1000);
 
     //création du camps rouge complet 
     this.add.sprite(100, 50, "tenterouge")
-    this.add.sprite(120, 90, "pilotirouge")
+    piloti1 = this.add.sprite(120, 90, "pilotirouge")
+    this.physics.world.enable([piloti1])
+    piloti1.body.setImmovable()
+    piloti1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
     chiotte1 = this.add.sprite(300, 60, "chiotte")
     chiotte1.setScale(0.75)
+    this.physics.world.enable([chiotte1])
+    chiotte1.body.setImmovable()
+    chiotte1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
     rondin1 = this.add.sprite(300, 170, "rondin")
-     tableafeu1 = this.add.sprite(300, 180, "tableafeu")
+    this.physics.world.enable([rondin1])
+    rondin1.body.setImmovable()
+    rondin1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+    tableafeu1 = this.add.sprite(300, 180, "tableafeu")
+    this.physics.world.enable([tableafeu1])
+    tableafeu1.body.setImmovable()
+    tableafeu1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
     chiotteR = this.add.sprite(300, 55, "chiotteR")
     chiotteR.setScale(0.75)
+    this.physics.world.enable([chiotteR])
+    chiotteR.body.setImmovable()
+    chiotteR.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
     gourde1 = this.add.sprite(425, 180, "gourde")
     gourde1.setScale(0.75)
+    this.physics.world.enable([gourde1])
+    gourde1.body.setImmovable()
+    gourde1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
     gourdeGold1 = this.add.sprite(425, 180, "gourdeGold")
     gourdeGold1.setScale(0.75)
+    this.physics.world.enable([gourdeGold1])
+    gourdeGold1.body.setImmovable()
+    gourdeGold1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
     bassin1 = this.add.sprite(150, 200, "bassin")
     bassin1.setScale(0.75)
+    this.physics.world.enable([bassin1])
+    bassin1.body.setImmovable()
+    bassin1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
     bassinGold1 = this.add.sprite(150, 200, "bassinGold")
     bassinGold1.setScale(0.75)
+    this.physics.world.enable([bassinGold1])
+    bassinGold1.body.setImmovable()
+    bassinGold1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
 
     //création du camps bleue complet 
     tentebleue = this.add.sprite(870, 50, "tentebleue")
@@ -166,22 +195,22 @@ function create(){
     pilotibleue.setScale(-1,1)
     chiotte2 = this.add.sprite(300, 60, "chiotte")
     chiotte2.setScale(0.75)
-    rondin1 = this.add.sprite(300, 170, "rondin")
-    tableafeu1 = this.add.sprite(300, 180, "tableafeu")
+    rondin2 = this.add.sprite(300, 170, "rondin")
+    tableafeu2 = this.add.sprite(300, 180, "tableafeu")
     chiotteR = this.add.sprite(300, 55, "chiotteR")
     chiotteR.setScale(0.75)
-    gourde1 = this.add.sprite(425, 180, "gourde")
-    gourde1.setScale(0.75)
-    gourdeGold1 = this.add.sprite(425, 180, "gourdeGold")
-    gourdeGold1.setScale(0.75)
-    bassin1 = this.add.sprite(150, 200, "bassin")
-    bassin1.setScale(0.75)
-    bassinGold1 = this.add.sprite(150, 200, "bassinGold")
-    bassinGold1.setScale(0.75)
+    gourde2 = this.add.sprite(425, 180, "gourde")
+    gourde2.setScale(0.75)
+    gourdeGold2 = this.add.sprite(425, 180, "gourdeGold")
+    gourdeGold2.setScale(0.75)
+    bassin2 = this.add.sprite(150, 200, "bassin")
+    bassin2.setScale(0.75)
+    bassinGold2 = this.add.sprite(150, 200, "bassinGold")
+    bassinGold2.setScale(0.75)
 
 
      //création feu
-     this.anims.create({
+    this.anims.create({
         key : "fire", 
         frames : [
             {key : "fire1"},
@@ -314,12 +343,24 @@ function create(){
       cow1 = this.physics.add.sprite(120, 290, "cow")
       cow1.anims.play("cow")
       cow1.setScale(3)
+      cow1.setSize(10,10)
+      this.physics.world.enable([cow1])
+      cow1.body.setImmovable()
+      cow1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
       pig1 = this.physics.add.sprite(190, 350, "pig")
       pig1.anims.play("pig")
       pig1.setScale(3)
+      pig1.setSize(10,10)
+      this.physics.world.enable([pig1])
+     pig1.body.setImmovable()
+     pig1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
       chicken1 = this.physics.add.sprite(270, 250, "chicken")
       chicken1.anims.play("chicken")
       chicken1.setScale(3)
+      chicken1.setSize(10,10)
+      this.physics.world.enable([chicken1])
+      chicken1.body.setImmovable()
+      chicken1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
   
       //fire
       fire1 = this.physics.add.sprite(300, 150, "fire")
@@ -332,6 +373,8 @@ function create(){
         this.cameras.main.startFollow(joueur);
         //taille joueur
         joueur.setScale(2.5);
+        joueur.setSize(10,20);
+        joueur.setOffset(0,0);
         //activer les collision du joueur sur les bords
         joueur.setCollideWorldBounds(true);
         //lancer l'anim de base
@@ -339,21 +382,59 @@ function create(){
     //foret sur la carte
     tree = this.physics.add.sprite( 300 , 600, "tree")
     tree.anims.play("tree")
+    tree.setSize(60,40)
+    tree.setOffset(30,130)
+    this.physics.world.enable([tree])
+    tree.body.setImmovable()
+    tree.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
     tree1 = this.physics.add.sprite( 550 , 800, "tree")
     tree1.anims.play("tree")
+    tree1.setSize(60,40)
+    tree1.setOffset(30,130)
+    this.physics.world.enable([tree1])
+    tree1.body.setImmovable()
+    tree1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
     tree2 = this.physics.add.sprite( 650 , 300, "tree")
     tree2.anims.play("tree")
+    tree2.setSize(60,40)
+    tree2.setOffset(30,130)
+    this.physics.world.enable([tree2])
+    tree2.body.setImmovable()
+    tree2.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
     tree3 = this.physics.add.sprite( 350 , 350, "tree")
     tree3.anims.play("tree")
+    tree3.setSize(60,40)
+    tree3.setOffset(30,130)
+    this.physics.world.enable([tree3])
+    tree3.body.setImmovable()
+    tree3.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
     tree4 = this.physics.add.sprite( 50 , 550, "tree")
     tree4.anims.play("tree")
+    tree4.setSize(60,40)
+    tree4.setOffset(30,130)
+    this.physics.world.enable([tree4])
+    tree4.body.setImmovable()
+    tree4.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
     tree5 = this.physics.add.sprite( 500 , 80, "tree")
     tree5.anims.play("tree")
+    tree5.setSize(60,40)
+    tree5.setOffset(30,130)
+    this.physics.world.enable([tree5])
+    tree5.body.setImmovable()
+    tree5.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
     tree6 = this.physics.add.sprite( 800 , 600, "tree")
     tree6.anims.play("tree")
-
-  
-
+    tree6.setSize(60,40)
+    tree6.setOffset(30,130)
+    this.physics.world.enable([tree6])
+    tree6.body.setImmovable()
+    tree6.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
 
 }
 
@@ -381,11 +462,31 @@ function update(time, delta){
     }
     //arreter le deplacement si on ne touche plus le keyboard
     if (cursor.left.isUp && cursor.right.isUp){
-        joueur.setVelocityX(0);
-        
+        joueur.setVelocityX(0); 
     }
 
     if (cursor.up.isUp && cursor.down.isUp){
         joueur.setVelocityY(0);
     }
+
+    this.physics.world.collide(joueur,chiotte1)
+    this.physics.world.collide(joueur,piloti1)
+    this.physics.world.collide(joueur,rondin1)
+    this.physics.world.collide(joueur,tableafeu1)
+    this.physics.world.collide(joueur,chiotteR)
+    this.physics.world.collide(joueur,gourde1)
+    this.physics.world.collide(joueur,gourdeGold1)
+    this.physics.world.collide(joueur,bassin1)
+    this.physics.world.collide(joueur,bassinGold1)
+    this.physics.world.collide(joueur,cow1)
+    this.physics.world.collide(joueur,pig1)
+    this.physics.world.collide(joueur,chicken1)
+    this.physics.world.collide(joueur,tree)
+    this.physics.world.collide(joueur,tree1)
+    this.physics.world.collide(joueur,tree2)
+    this.physics.world.collide(joueur,tree3)
+    this.physics.world.collide(joueur,tree4)
+    this.physics.world.collide(joueur,tree5)
+    this.physics.world.collide(joueur,tree6)
+
 }
