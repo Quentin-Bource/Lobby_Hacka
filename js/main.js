@@ -3,6 +3,10 @@ var config = {
     type : Phaser.AUTO,
     width : 1000, 
     height : 1000, 
+     scale :{
+            mode:Phaser.Scale.NO_SCALE,
+            autoCenter: Phaser.Scale.CENTER_BOTH
+        },
     scene: {
         preload: preload,
         create: create,
@@ -15,10 +19,11 @@ var config = {
                 gravity: { y: 0 },
             }
         }
+       
 }
 
 const game = new Phaser.Game(config);
-
+var pointer;
 var cursor;
 var joueur;
 var camera;
@@ -134,12 +139,14 @@ function create(){
     //créer input avec les keyboard
     cursor = this.input.keyboard.createCursorKeys();
 
+    pointer = this.input.addPointer(1);
+
     //Background et position
     var backgroundImage = this.add.sprite(0 , 0 ,"background")
     backgroundImage.setPosition(config.width/2, config.height/2)
 
     //caméra  plus colision sur le bord de la map
-    this.cameras.main.setBounds(0, 0, 1200, 1200 );
+    this.cameras.main.setBounds(0, 0, 1000, 1000 );
     this.cameras.main.setZoom(2);
     this.physics.world.setBounds(0, 0, 1000, 1000);
 
@@ -252,7 +259,7 @@ function create(){
     bassinGold2.body.setImmovable()
     bassinGold2.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
 
-    //création du camps jaune complet 
+    //création du camps mauve complet 
     tentemauve = this.add.sprite(870, 849, "tentemauve")
     tentemauve.setFlip(true,false)
 
@@ -698,6 +705,8 @@ function create(){
     tree6.body.setImmovable()
     tree6.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
 
+
+
 }
 
 function update(time, delta){
@@ -731,6 +740,31 @@ function update(time, delta){
         joueur.setVelocityY(0);
     }
 
+    if (this.input.pointer1.isDown) {
+        var touchX = this.input.pointer1.x;
+        var touchY = this.input.pointer1.y;
+
+        if (touchY < joueur.y - 10) {
+            joueur.setVelocityY(-200);
+            joueur.anims.play("playerUp", true);
+        } else if (touchY > joueur.y + 10) {
+            joueur.setVelocityY(200);
+            joueur.anims.play("playerDown", true);
+        } else {
+            joueur.setVelocityY(0);
+        }
+
+        if (touchX < joueur.x - 10) {
+            joueur.setVelocityX(-200);
+            joueur.anims.play("playerLeft", true);
+        } else if (touchX > joueur.x + 10) {
+            joueur.setVelocityX(200);
+            joueur.anims.play("playerRight", true);
+        } else {
+            joueur.setVelocityX(0);
+        }
+    } 
+    
     this.physics.world.collide(joueur,chiotte1)
     this.physics.world.collide(joueur,piloti1)
     this.physics.world.collide(joueur,rondin1)
@@ -799,3 +833,4 @@ function update(time, delta){
     this.physics.world.collide(joueur,chicken4)
 
 }
+
