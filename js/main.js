@@ -763,10 +763,7 @@ function update(time, delta){
         } else {
             joueur.setVelocityX(0);
         }
-    } else {
-        joueur.setVelocityX(0);
-        joueur.setVelocityY(0);
-    }
+    } 
     
     this.physics.world.collide(joueur,chiotte1)
     this.physics.world.collide(joueur,piloti1)
