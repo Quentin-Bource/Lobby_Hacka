@@ -11,7 +11,7 @@ var config = {
         physics: {
             default: 'arcade',
             arcade: {
-                debug:true,
+                debug:false,
                 gravity: { y: 0 },
             }
         }
@@ -149,39 +149,47 @@ function create(){
     this.physics.world.enable([piloti1])
     piloti1.body.setImmovable()
     piloti1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
     chiotte1 = this.add.sprite(300, 60, "chiotte")
     chiotte1.setScale(0.75)
     this.physics.world.enable([chiotte1])
     chiotte1.body.setImmovable()
     chiotte1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
     rondin1 = this.add.sprite(300, 170, "rondin")
     this.physics.world.enable([rondin1])
     rondin1.body.setImmovable()
     rondin1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
     tableafeu1 = this.add.sprite(300, 180, "tableafeu")
     this.physics.world.enable([tableafeu1])
     tableafeu1.body.setImmovable()
     tableafeu1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
     chiotteR = this.add.sprite(300, 55, "chiotteR")
     chiotteR.setScale(0.75)
     this.physics.world.enable([chiotteR])
     chiotteR.body.setImmovable()
     chiotteR.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
     gourde1 = this.add.sprite(425, 180, "gourde")
     gourde1.setScale(0.75)
     this.physics.world.enable([gourde1])
     gourde1.body.setImmovable()
     gourde1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
     gourdeGold1 = this.add.sprite(425, 180, "gourdeGold")
     gourdeGold1.setScale(0.75)
     this.physics.world.enable([gourdeGold1])
     gourdeGold1.body.setImmovable()
     gourdeGold1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
     bassin1 = this.add.sprite(150, 200, "bassin")
     bassin1.setScale(0.75)
     this.physics.world.enable([bassin1])
     bassin1.body.setImmovable()
     bassin1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
     bassinGold1 = this.add.sprite(150, 200, "bassinGold")
     bassinGold1.setScale(0.75)
     this.physics.world.enable([bassinGold1])
@@ -190,23 +198,169 @@ function create(){
 
     //création du camps bleue complet 
     tentebleue = this.add.sprite(870, 50, "tentebleue")
-    tentebleue.setScale(-1,1)
+    tentebleue.setFlip(true,false)
+
     pilotibleue = this.add.sprite(860, 90, "pilotibleue")
-    pilotibleue.setScale(-1,1)
-    chiotte2 = this.add.sprite(300, 60, "chiotte")
+    pilotibleue.setFlip(true,false)
+    this.physics.world.enable([pilotibleue])
+    pilotibleue.body.setImmovable()
+    pilotibleue.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    chiotte2 = this.add.sprite(650, 60, "chiotte")
     chiotte2.setScale(0.75)
-    rondin2 = this.add.sprite(300, 170, "rondin")
-    tableafeu2 = this.add.sprite(300, 180, "tableafeu")
-    chiotteR = this.add.sprite(300, 55, "chiotteR")
-    chiotteR.setScale(0.75)
-    gourde2 = this.add.sprite(425, 180, "gourde")
+    this.physics.world.enable([chiotte2])
+    chiotte2.body.setImmovable()
+    chiotte2.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    rondin2 = this.add.sprite(700, 170, "rondin")
+    this.physics.world.enable([rondin2])
+    rondin2.body.setImmovable()
+    rondin2.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    tableafeu2 = this.add.sprite(700, 180, "tableafeu")
+    this.physics.world.enable([tableafeu2])
+    tableafeu2.body.setImmovable()
+    tableafeu2.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    chiotteB = this.add.sprite(650, 55, "chiotteB")
+    chiotteB.setScale(0.75)
+    this.physics.world.enable([chiotteB])
+    chiotteB.body.setImmovable()
+    chiotteB.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    gourde2 = this.add.sprite(575, 180, "gourde")
     gourde2.setScale(0.75)
-    gourdeGold2 = this.add.sprite(425, 180, "gourdeGold")
+    this.physics.world.enable([gourde2])
+    gourde2.body.setImmovable()
+    gourde2.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    gourdeGold2 = this.add.sprite(575, 180, "gourdeGold")
     gourdeGold2.setScale(0.75)
-    bassin2 = this.add.sprite(150, 200, "bassin")
+    this.physics.world.enable([gourdeGold2])
+    gourdeGold2.body.setImmovable()
+    gourdeGold2.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    bassin2 = this.add.sprite(800, 200, "bassin")
     bassin2.setScale(0.75)
-    bassinGold2 = this.add.sprite(150, 200, "bassinGold")
+    this.physics.world.enable([bassin2])
+    bassin2.body.setImmovable()
+    bassin2.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    bassinGold2 = this.add.sprite(800, 200, "bassinGold")
     bassinGold2.setScale(0.75)
+    this.physics.world.enable([bassinGold2])
+    bassinGold2.body.setImmovable()
+    bassinGold2.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    //création du camps jaune complet 
+    tentemauve = this.add.sprite(870, 849, "tentemauve")
+    tentemauve.setFlip(true,false)
+
+    pilotimauve = this.add.sprite(860, 870, "pilotimauve")
+    pilotimauve.setFlip(true,false)
+    this.physics.world.enable([pilotimauve])
+    pilotimauve.body.setImmovable()
+    pilotimauve.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    chiotte3 = this.add.sprite(650, 860, "chiotte")
+    chiotte3.setScale(0.75)
+    this.physics.world.enable([chiotte3])
+    chiotte3.body.setImmovable()
+    chiotte3.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    rondin3 = this.add.sprite(650, 695, "rondin")
+    this.physics.world.enable([rondin3])
+    rondin3.body.setImmovable()
+    rondin3.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    tableafeu3 = this.add.sprite(650, 700, "tableafeu")
+    this.physics.world.enable([tableafeu3])
+    tableafeu3.body.setImmovable()
+    tableafeu3.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    chiotteM = this.add.sprite(650, 854, "chiotteM")
+    chiotteM.setScale(0.75)
+    this.physics.world.enable([chiotteM])
+    chiotteM.body.setImmovable()
+    chiotteM.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    gourde3 = this.add.sprite(750, 750, "gourde")
+    gourde3.setScale(0.75)
+    this.physics.world.enable([gourde3])
+    gourde3.body.setImmovable()
+    gourde3.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    gourdeGold3 = this.add.sprite(750, 750, "gourdeGold")
+    gourdeGold3.setScale(0.75)
+    this.physics.world.enable([gourdeGold3])
+    gourdeGold3.body.setImmovable()
+    gourdeGold3.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    bassin3 = this.add.sprite(830, 740, "bassin")
+    bassin3.setScale(0.75)
+    this.physics.world.enable([bassin3])
+    bassin3.body.setImmovable()
+    bassin3.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    bassinGold3 = this.add.sprite(830, 740, "bassinGold")
+    bassinGold3.setScale(0.75)
+    this.physics.world.enable([bassinGold3])
+    bassinGold3.body.setImmovable()
+    bassinGold3.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    //création du camps jaune complet 
+    tentejaune = this.add.sprite(120, 849, "tentejaune")
+
+    pilotijaune = this.add.sprite(20, 870, "pilotijaune")
+    this.physics.world.enable([pilotijaune])
+    pilotijaune.body.setImmovable()
+    pilotijaune.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    chiotte4 = this.add.sprite(350, 860, "chiotte")
+    chiotte4.setScale(0.75)
+    this.physics.world.enable([chiotte4])
+    chiotte4.body.setImmovable()
+    chiotte4.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    rondin4 = this.add.sprite(250, 705, "rondin")
+    this.physics.world.enable([rondin4])
+    rondin4.body.setImmovable()
+    rondin4.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    tableafeu4 = this.add.sprite(250, 710, "tableafeu")
+    this.physics.world.enable([tableafeu4])
+    tableafeu4.body.setImmovable()
+    tableafeu4.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    chiotteJ = this.add.sprite(350, 854, "chiotteJ")
+    chiotteJ.setScale(0.75)
+    this.physics.world.enable([chiotteJ])
+    chiotteJ.body.setImmovable()
+    chiotteJ.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    gourde4 = this.add.sprite(350, 750, "gourde")
+    gourde4.setScale(0.75)
+    this.physics.world.enable([gourde4])
+    gourde4.body.setImmovable()
+    gourde4.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    gourdeGold4 = this.add.sprite(350, 750, "gourdeGold")
+    gourdeGold4.setScale(0.75)
+    this.physics.world.enable([gourdeGold4])
+    gourdeGold4.body.setImmovable()
+    gourdeGold4.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    bassin4 = this.add.sprite(150, 740, "bassin")
+    bassin4.setScale(0.75)
+    this.physics.world.enable([bassin4])
+    bassin4.body.setImmovable()
+    bassin4.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+    bassinGold4 = this.add.sprite(150, 740, "bassinGold")
+    bassinGold4.setScale(0.75)
+    this.physics.world.enable([bassinGold4])
+    bassinGold4.body.setImmovable()
+    bassinGold4.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
 
 
      //création feu
@@ -340,33 +494,139 @@ function create(){
         repeat : -1
     })
       //animaux 
-      cow1 = this.physics.add.sprite(120, 290, "cow")
-      cow1.anims.play("cow")
-      cow1.setScale(3)
-      cow1.setSize(10,10)
-      this.physics.world.enable([cow1])
-      cow1.body.setImmovable()
-      cow1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
-      pig1 = this.physics.add.sprite(190, 350, "pig")
-      pig1.anims.play("pig")
-      pig1.setScale(3)
-      pig1.setSize(10,10)
-      this.physics.world.enable([pig1])
-     pig1.body.setImmovable()
-     pig1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
-      chicken1 = this.physics.add.sprite(270, 250, "chicken")
-      chicken1.anims.play("chicken")
-      chicken1.setScale(3)
-      chicken1.setSize(10,10)
-      this.physics.world.enable([chicken1])
-      chicken1.body.setImmovable()
-      chicken1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
-  
-      //fire
-      fire1 = this.physics.add.sprite(300, 150, "fire")
-      fire1.anims.play("fire")
-      fire1.setScale(0.1)
-      
+        cow1 = this.physics.add.sprite(120, 290, "cow")
+        cow1.anims.play("cow")
+        cow1.setScale(3)
+        cow1.setSize(10,10)
+        this.physics.world.enable([cow1])
+        cow1.body.setImmovable()
+        cow1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+        pig1 = this.physics.add.sprite(190, 350, "pig")
+        pig1.anims.play("pig")
+        pig1.setScale(3)
+        pig1.setSize(10,10)
+        this.physics.world.enable([pig1])
+        pig1.body.setImmovable()
+        pig1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+        chicken1 = this.physics.add.sprite(270, 250, "chicken")
+        chicken1.anims.play("chicken")
+        chicken1.setScale(3)
+        chicken1.setSize(10,10)
+        this.physics.world.enable([chicken1])
+        chicken1.body.setImmovable()
+        chicken1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+        cow2 = this.physics.add.sprite(870, 290, "cow")
+        cow2.anims.play("cow")
+        cow2.setScale(3,3)
+        cow2.setFlip(true,false)
+        cow2.setSize(10,10)
+        cow2.setOffset(0,0)
+        this.physics.world.enable([cow2])
+        cow2.body.setImmovable()
+        cow2.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+        pig2 = this.physics.add.sprite(800, 350, "pig")
+        pig2.anims.play("pig")
+        pig2.setScale(3,3)
+        pig2.setFlip(true,false)
+        pig2.setSize(10,10)
+        this.physics.world.enable([pig2])
+        pig2.body.setImmovable()
+        pig2.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+        chicken2 = this.physics.add.sprite(750, 270, "chicken")
+        chicken2.anims.play("chicken")
+        chicken2.setScale(3,3)
+        chicken2.setFlip(true,false)
+        chicken2.setSize(10,10)
+        this.physics.world.enable([chicken2])
+        chicken2.body.setImmovable()
+        chicken2.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+
+        cow3 = this.physics.add.sprite(950, 650, "cow")
+        cow3.anims.play("cow")
+        cow3.setScale(3,3)
+        cow3.setFlip(true,false)
+        cow3.setSize(10,10)
+        cow3.setOffset(0,0)
+        this.physics.world.enable([cow3])
+        cow3.body.setImmovable()
+        cow3.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+        pig3 = this.physics.add.sprite(920, 750, "pig")
+        pig3.anims.play("pig")
+        pig3.setScale(3,3)
+        pig3.setFlip(true,false)
+        pig3.setSize(10,10)
+        this.physics.world.enable([pig3])
+        pig3.body.setImmovable()
+        pig3.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+        chicken3 = this.physics.add.sprite(650, 950, "chicken")
+        chicken3.anims.play("chicken")
+        chicken3.setScale(3,3)
+        chicken3.setFlip(true,false)
+        chicken3.setSize(10,10)
+        this.physics.world.enable([chicken3])
+        chicken3.body.setImmovable()
+        chicken3.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+        cow4 = this.physics.add.sprite(40, 750, "cow")
+        cow4.anims.play("cow")
+        cow4.setScale(3,3)
+        cow4.setFlip(true,false)
+        cow4.setSize(10,10)
+        cow4.setOffset(0,0)
+        this.physics.world.enable([cow4])
+        cow4.body.setImmovable()
+        cow4.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+        pig4 = this.physics.add.sprite(160, 650, "pig")
+        pig4.anims.play("pig")
+        pig4.setScale(3,3)
+        pig4.setFlip(true,false)
+        pig4.setSize(10,10)
+        this.physics.world.enable([pig4])
+        pig4.body.setImmovable()
+        pig4.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+        chicken4 = this.physics.add.sprite(240, 850, "chicken")
+        chicken4.anims.play("chicken")
+        chicken4.setScale(3,3)
+        chicken4.setFlip(true,false)
+        chicken4.setSize(10,10)
+        this.physics.world.enable([chicken4])
+        chicken4.body.setImmovable()
+        chicken4.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+    
+    
+        //fire
+        fire1 = this.physics.add.sprite(300, 150, "fire")
+        fire1.anims.play("fire")
+        fire1.setScale(0.1)
+        this.physics.world.enable([fire1])
+        fire1.body.setImmovable()
+        fire1.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+        fire2 = this.physics.add.sprite(700, 150, "fire")
+        fire2.anims.play("fire")
+        fire2.setScale(0.1)
+        this.physics.world.enable([fire2])
+        fire2.body.setImmovable()
+        fire2.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+        fire3 = this.physics.add.sprite(650, 662, "fire")
+        fire3.anims.play("fire")
+        fire3.setScale(0.1)
+        this.physics.world.enable([fire3])
+        fire3.body.setImmovable()
+        fire3.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+        fire4 = this.physics.add.sprite(250, 672, "fire")
+        fire4.anims.play("fire")
+        fire4.setScale(0.1)
+        this.physics.world.enable([fire4])
+        fire4.body.setImmovable()
+        fire4.body.setVelocity(0,0).setBounce(0,0).setCollideWorldBounds(true)
+
+
+
         //appartion du joueur
         joueur = this.physics.add.sprite( 500 , 550, "joueur")
         //Lancer la caméra sur le joueur
@@ -379,6 +639,8 @@ function create(){
         joueur.setCollideWorldBounds(true);
         //lancer l'anim de base
         joueur.anims.play("playerWait")
+
+
     //foret sur la carte
     tree = this.physics.add.sprite( 300 , 600, "tree")
     tree.anims.play("tree")
@@ -478,9 +740,11 @@ function update(time, delta){
     this.physics.world.collide(joueur,gourdeGold1)
     this.physics.world.collide(joueur,bassin1)
     this.physics.world.collide(joueur,bassinGold1)
+
     this.physics.world.collide(joueur,cow1)
     this.physics.world.collide(joueur,pig1)
     this.physics.world.collide(joueur,chicken1)
+
     this.physics.world.collide(joueur,tree)
     this.physics.world.collide(joueur,tree1)
     this.physics.world.collide(joueur,tree2)
@@ -488,5 +752,50 @@ function update(time, delta){
     this.physics.world.collide(joueur,tree4)
     this.physics.world.collide(joueur,tree5)
     this.physics.world.collide(joueur,tree6)
+
+    this.physics.world.collide(joueur,fire1)
+    this.physics.world.collide(joueur,fire2)
+
+    this.physics.world.collide(joueur,chiotte2)
+    this.physics.world.collide(joueur,pilotibleue)
+    this.physics.world.collide(joueur,rondin2)
+    this.physics.world.collide(joueur,tableafeu2)
+    this.physics.world.collide(joueur,chiotteB)
+    this.physics.world.collide(joueur,gourde2)
+    this.physics.world.collide(joueur,gourdeGold2)
+    this.physics.world.collide(joueur,bassin2)
+    this.physics.world.collide(joueur,bassinGold2)
+
+    this.physics.world.collide(joueur,cow2)
+    this.physics.world.collide(joueur,pig2)
+    this.physics.world.collide(joueur,chicken2)
+
+    this.physics.world.collide(joueur,chiotte3)
+    this.physics.world.collide(joueur,pilotimauve)
+    this.physics.world.collide(joueur,rondin3)
+    this.physics.world.collide(joueur,tableafeu3)
+    this.physics.world.collide(joueur,chiotteM)
+    this.physics.world.collide(joueur,gourde3)
+    this.physics.world.collide(joueur,gourdeGold3)
+    this.physics.world.collide(joueur,bassin3)
+    this.physics.world.collide(joueur,bassinGold3)
+
+    this.physics.world.collide(joueur,cow3)
+    this.physics.world.collide(joueur,pig3)
+    this.physics.world.collide(joueur,chicken3)
+
+    this.physics.world.collide(joueur,chiotte4)
+    this.physics.world.collide(joueur,pilotijaune)
+    this.physics.world.collide(joueur,rondin4)
+    this.physics.world.collide(joueur,tableafeu4)
+    this.physics.world.collide(joueur,chiotteJ)
+    this.physics.world.collide(joueur,gourde4)
+    this.physics.world.collide(joueur,gourdeGold4)
+    this.physics.world.collide(joueur,bassin4)
+    this.physics.world.collide(joueur,bassinGold4)
+
+    this.physics.world.collide(joueur,cow4)
+    this.physics.world.collide(joueur,pig4)
+    this.physics.world.collide(joueur,chicken4)
 
 }
