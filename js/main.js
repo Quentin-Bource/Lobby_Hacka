@@ -31,25 +31,25 @@ var camera;
 function preload(){
 
     //intégralité des choses qu'on retrouve dans un camps
-    this.load.image("tentebleue", "assets/decor/tente_bleue.png")
-    this.load.image("tentejaune", "assets/decor/tente_jaune.png")
-    this.load.image("tentemauve", "assets/decor/tente_mauve.png")
-    this.load.image("tenterouge", "assets/decor/tente_rouge.png")
-    this.load.image("pilotibleue", "assets/decor/tentePilotisBleue.png")
-    this.load.image("pilotijaune", "assets/decor/tentePilotisJaune.png")
-    this.load.image("pilotimauve", "assets/decor/tentePilotisMauve.png")
-    this.load.image("pilotirouge", "assets/decor/tentePilotisRouge.png")
-    this.load.image("chiotte", "assets/decor/Chiottes.png")
-    this.load.image("rondin", "assets/decor/Rondins.png")
-    this.load.image("tableafeu" , "assets/decor/tbaf.png")
-    this.load.image("chiotteR" , "assets/decor/chiotteR.png")
-    this.load.image("chiotteB" , "assets/decor/chiotteB.png")
-    this.load.image("chiotteJ" , "assets/decor/chiotteJ.png")
-    this.load.image("chiotteM" , "assets/decor/chiotteM.png")
-    this.load.image("bassin" , "assets/decor/bassin.png")
-    this.load.image("bassinGold" , "assets/decor/bassinGold.png")
-    this.load.image("gourde" , "assets/decor/gourde.png")
-    this.load.image("gourdeGold" , "assets/decor/gourdeGold.png")
+    this.load.image("tentebleue", "public/assets/decor/tente_bleue.png")
+    this.load.image("tentejaune", "public/assets/decor/tente_jaune.png")
+    this.load.image("tentemauve", "public/assets/decor/tente_mauve.png")
+    this.load.image("tenterouge", "public/assets/decor/tente_rouge.png")
+    this.load.image("pilotibleue", "public/assets/decor/tentePilotisBleue.png")
+    this.load.image("pilotijaune", "public/assets/decor/tentePilotisJaune.png")
+    this.load.image("pilotimauve", "public/assets/decor/tentePilotisMauve.png")
+    this.load.image("pilotirouge", "public/assets/decor/tentePilotisRouge.png")
+    this.load.image("chiotte", "public/assets/decor/Chiottes.png")
+    this.load.image("rondin", "public/assets/decor/Rondins.png")
+    this.load.image("tableafeu" , "public/assets/decor/tbaf.png")
+    this.load.image("chiotteR" , "public/assets/decor/chiotteR.png")
+    this.load.image("chiotteB" , "public/assets/decor/chiotteB.png")
+    this.load.image("chiotteJ" , "public/assets/decor/chiotteJ.png")
+    this.load.image("chiotteM" , "public/assets/decor/chiotteM.png")
+    this.load.image("bassin" , "public/assets/decor/bassin.png")
+    this.load.image("bassinGold" , "public/assets/decor/bassinGold.png")
+    this.load.image("gourde" , "public/assets/decor/gourde.png")
+    this.load.image("gourdeGold" , "public/assets/decor/gourdeGold.png")
 
 
 
@@ -61,74 +61,74 @@ function preload(){
 
 
     //animation feu
-    this.load.image("fire1", "assets/decor/fire1.png")
-    this.load.image("fire2", "assets/decor/fire2.png")
-    this.load.image("fire3", "assets/decor/fire3.png")
-    this.load.image("fire4", "assets/decor/fire4.png")
+    this.load.image("fire1", "public/assets/decor/fire1.png")
+    this.load.image("fire2", "public/assets/decor/fire2.png")
+    this.load.image("fire3", "public/assets/decor/fire3.png")
+    this.load.image("fire4", "public/assets/decor/fire4.png")
 
     //animation vache
-    this.load.image("cow1", "assets/animals/cow1.png")
-    this.load.image("cow2", "assets/animals/cow2.png")
-    this.load.image("cow3", "assets/animals/cow3.png")
-    this.load.image("cow4", "assets/animals/cow4.png")
+    this.load.image("cow1", "public/assets/animals/cow1.png")
+    this.load.image("cow2", "public/assets/animals/cow2.png")
+    this.load.image("cow3", "public/assets/animals/cow3.png")
+    this.load.image("cow4", "public/assets/animals/cow4.png")
 
     //animation chicken
-    this.load.image("chicken1", "assets/animals/chicken1.png")
-    this.load.image("chicken2", "assets/animals/chicken2.png")
-    this.load.image("chicken3", "assets/animals/chicken3.png")
-    this.load.image("chicken4", "assets/animals/chicken4.png")
+    this.load.image("chicken1", "public/assets/animals/chicken1.png")
+    this.load.image("chicken2", "public/assets/animals/chicken2.png")
+    this.load.image("chicken3", "public/assets/animals/chicken3.png")
+    this.load.image("chicken4", "public/assets/animals/chicken4.png")
 
     //animation pig 
-    this.load.image("pig1", "assets/animals/pig1.png")
-    this.load.image("pig2", "assets/animals/pig2.png")
-    this.load.image("pig3", "assets/animals/pig3.png")
-    this.load.image("pig4", "assets/animals/pig4.png")
+    this.load.image("pig1", "public/assets/animals/pig1.png")
+    this.load.image("pig2", "public/assets/animals/pig2.png")
+    this.load.image("pig3", "public/assets/animals/pig3.png")
+    this.load.image("pig4", "public/assets/animals/pig4.png")
 
     //background
-    this.load.image("background", "assets/perso/background.png")
+    this.load.image("background", "public/assets/perso/background.png")
 
     //arbre animation 
-    this.load.image("tree1", "assets/decor/tree1.png")
-    this.load.image("tree2", "assets/decor/tree2.png")
-    this.load.image("tree3", "assets/decor/tree3.png")
-    this.load.image("tree4", "assets/decor/tree4.png")
+    this.load.image("tree1", "public/assets/decor/tree1.png")
+    this.load.image("tree2", "public/assets/decor/tree2.png")
+    this.load.image("tree3", "public/assets/decor/tree3.png")
+    this.load.image("tree4", "public/assets/decor/tree4.png")
 
     //Animation joueur sur place
-    this.load.image("joueur1", "assets/perso/player1.png")
-    this.load.image("joueur2", "assets/perso/player2.png")
-    this.load.image("joueur3", "assets/perso/player3.png")
+    this.load.image("joueur1", "public/assets/perso/player1.png")
+    this.load.image("joueur2", "public/assets/perso/player2.png")
+    this.load.image("joueur3", "public/assets/perso/player3.png")
 
     //Animation joueur qui monte
-    this.load.image("upjoueur1", "assets/perso/upplayer1.png")
-    this.load.image("upjoueur2", "assets/perso/upplayer2.png")
-    this.load.image("upjoueur3", "assets/perso/upplayer3.png")
-    this.load.image("upjoueur4", "assets/perso/upplayer4.png")
-    this.load.image("upjoueur5", "assets/perso/upplayer5.png")
-    this.load.image("upjoueur6", "assets/perso/upplayer6.png")
+    this.load.image("upjoueur1", "public/assets/perso/upplayer1.png")
+    this.load.image("upjoueur2", "public/assets/perso/upplayer2.png")
+    this.load.image("upjoueur3", "public/assets/perso/upplayer3.png")
+    this.load.image("upjoueur4", "public/assets/perso/upplayer4.png")
+    this.load.image("upjoueur5", "public/assets/perso/upplayer5.png")
+    this.load.image("upjoueur6", "public/assets/perso/upplayer6.png")
 
     //Animation joueur qui descend
-    this.load.image("downjoueur1", "assets/perso/downplayer1.png")
-    this.load.image("downjoueur2", "assets/perso/downplayer2.png")
-    this.load.image("downjoueur3", "assets/perso/downplayer3.png")
-    this.load.image("downjoueur4", "assets/perso/downplayer4.png")
-    this.load.image("downjoueur5", "assets/perso/downplayer5.png")
-    this.load.image("downjoueur6", "assets/perso/downplayer6.png")
+    this.load.image("downjoueur1", "public/assets/perso/downplayer1.png")
+    this.load.image("downjoueur2", "public/assets/perso/downplayer2.png")
+    this.load.image("downjoueur3", "public/assets/perso/downplayer3.png")
+    this.load.image("downjoueur4", "public/assets/perso/downplayer4.png")
+    this.load.image("downjoueur5", "public/assets/perso/downplayer5.png")
+    this.load.image("downjoueur6", "public/assets/perso/downplayer6.png")
 
     //Animation joueur qui va a droite
-    this.load.image("rightjoueur1", "assets/perso/rightplayer1.png")
-    this.load.image("rightjoueur2", "assets/perso/rightplayer2.png")
-    this.load.image("rightjoueur3", "assets/perso/rightplayer3.png")
-    this.load.image("rightjoueur4", "assets/perso/rightplayer4.png")
-    this.load.image("rightjoueur5", "assets/perso/rightplayer5.png")
-    this.load.image("rightjoueur6", "assets/perso/rightplayer6.png")
+    this.load.image("rightjoueur1", "public/assets/perso/rightplayer1.png")
+    this.load.image("rightjoueur2", "public/assets/perso/rightplayer2.png")
+    this.load.image("rightjoueur3", "public/assets/perso/rightplayer3.png")
+    this.load.image("rightjoueur4", "public/assets/perso/rightplayer4.png")
+    this.load.image("rightjoueur5", "public/assets/perso/rightplayer5.png")
+    this.load.image("rightjoueur6", "public/assets/perso/rightplayer6.png")
 
     //Animation joueur qui va a gauche
-    this.load.image("leftjoueur1", "assets/perso/leftplayer1.png")
-    this.load.image("leftjoueur2", "assets/perso/leftplayer2.png")
-    this.load.image("leftjoueur3", "assets/perso/leftplayer3.png")
-    this.load.image("leftjoueur4", "assets/perso/leftplayer4.png")
-    this.load.image("leftjoueur5", "assets/perso/leftplayer5.png")
-    this.load.image("leftjoueur6", "assets/perso/leftplayer6.png")
+    this.load.image("leftjoueur1", "public/assets/perso/leftplayer1.png")
+    this.load.image("leftjoueur2", "public/assets/perso/leftplayer2.png")
+    this.load.image("leftjoueur3", "public/assets/perso/leftplayer3.png")
+    this.load.image("leftjoueur4", "public/assets/perso/leftplayer4.png")
+    this.load.image("leftjoueur5", "public/assets/perso/leftplayer5.png")
+    this.load.image("leftjoueur6", "public/assets/perso/leftplayer6.png")
 
 }
 
