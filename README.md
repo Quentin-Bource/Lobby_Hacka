@@ -11,11 +11,12 @@ Pour utiliser Lobby-Hackathon:
 
 Accédez à la branche "dev" du projet.
 Ouvrez le fichier index.html dans votre navigateur.
-Explorez la carte en cliquant pour voir les différents projets.
+Explorez la carte.
 ## Fonctionnalités
 Lobby-Hackathon permet aux utilisateurs de:
 
-Naviguer sur la carte pour découvrir les différents projets de l'hackathon.
+Naviguer sur la carte pour découvrir un camps scouts revisité.
+<img width="1506" alt="Accueil site" src="https://github.com/Quentin-Bource/Lobby_Hacka/blob/main/Lobby.png">
 ## Crédits
 Lobby-Hackathon a été créé lors de l'hackathon Dev vs Wild en 48 heures.
 
