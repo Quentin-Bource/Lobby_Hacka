@@ -16,7 +16,7 @@ Explorez la carte.
 Lobby-Hackathon permet aux utilisateurs de:
 
 Naviguer sur la carte pour découvrir un camps scouts revisité.
-<img width="1506" alt="Accueil site" src="https://github.com/Quentin-Bource/Lobby_Hacka/blob/main/Lobby.png">
+<img width="1506" alt="Accueil site" src="https://github.com/Quentin-Bource/Lobby_Hacka/blob/main/assets/Lobby.png">
 ## Crédits
 Lobby-Hackathon a été créé lors de l'hackathon Dev vs Wild en 48 heures.
 
